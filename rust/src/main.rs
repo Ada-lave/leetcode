@@ -1,0 +1,6 @@
+pub mod problems;
+use problems::p27_remove_element::solution::Solution;
+
+fn main() {
+    
+}
