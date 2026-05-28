@@ -1,27 +1,30 @@
 package task_151
 
-import "strings"
+import (
+	"slices"
+	"strings"
+)
 
 // "a good   example"
 func reverseWords(s string) string {
-    result := strings.Builder{}
+    result := []string{}
 	
-	count := 0
-	whiteSpace := byte(' ')
-	for i := len(s) - 1; i >= 0; i-- {
-		if count == 0 && s[i] == whiteSpace {
-			continue
-		} else if s[i] != whiteSpace {
-			count++
-		}
-		if count > 0 && (s[i] == whiteSpace || i == 0) {
-			result.WriteString(s[i + 1:i+count+1])
-			count = 0
-			if i != 0 {
-				result.WriteByte(whiteSpace)
+	i := 0
+	currentString := strings.Builder{}
+	for i < len(s) {
+		if s[i] != ' ' {
+			currentString.WriteByte(s[i])
+		} else {
+			if currentString.Len() > 0 {
+				result = append(result, currentString.String())
 			}
+			currentString.Reset()
 		}
+		i++
 	}
-
-	return strings.TrimSpace(result.String())
+	if currentString.Len() > 0 {
+		result = append(result, currentString.String())
+	}
+	slices.Reverse(result)
+	return strings.Join(result, " ")
 }
