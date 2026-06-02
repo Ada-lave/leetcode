@@ -5,3 +5,4 @@ pub mod p605;
 pub mod p345;
 pub mod p151;
 pub mod p238;
+pub mod p334;
