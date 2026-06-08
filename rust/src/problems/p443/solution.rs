@@ -22,8 +22,9 @@ impl Solution {
                     }
 
                     counter = 1;
-                    current_char = chars[read_ptr];
-                } 
+                }
+                current_char = chars[read_ptr];
+
             } else {
                 counter += 1
             }
