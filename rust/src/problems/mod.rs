@@ -8,3 +8,4 @@ pub mod p238;
 pub mod p334;
 pub mod p443;
 pub mod p283;
+pub mod p392;
