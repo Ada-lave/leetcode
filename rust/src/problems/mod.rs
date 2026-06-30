@@ -11,3 +11,4 @@ pub mod p283;
 pub mod p392;
 pub mod p11;
 pub mod p1679;
+pub mod p643;
